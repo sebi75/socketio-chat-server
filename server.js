@@ -18,7 +18,10 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: "https://realtime-chat-32a39.firebaseapp.com/",
+    origin:
+      process.env.NODE_END === "development"
+        ? "http://localhost:3000"
+        : "https://realtime-chat-32a39.web.app",
     methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
   },
 })
