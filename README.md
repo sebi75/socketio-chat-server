@@ -1,1 +1,1 @@
-## backend service for the chat application
+## server for the chat application
